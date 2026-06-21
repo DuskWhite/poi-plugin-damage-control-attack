@@ -1,0 +1,9 @@
+{
+  "warningTitle": "進擊提醒",
+  "warningBody": "繼續進擊將消耗損管或者女神 請確認是否繼續進擊",
+  "confirm": "確認",
+  "cancel": "取消",
+  "settingsTitle": "損管進擊提醒",
+  "settingsDescription": "當出擊艦隊只有一艘船且攜帶應急修理要員/女神，並且下一個進擊點位為泊地修理點（F/H/I）時，彈出確認彈窗。點擊取消會刷新遊戲頁面。",
+  "enableLabel": "啟用進擊提醒"
+}

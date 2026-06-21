@@ -1,0 +1,9 @@
+{
+  "warningTitle": "Advance Warning",
+  "warningBody": "Continuing will consume your Emergency Repair Personnel/Goddess. Confirm to advance.",
+  "confirm": "Confirm",
+  "cancel": "Cancel",
+  "settingsTitle": "Damage Control Advance Warning",
+  "settingsDescription": "When the sortie fleet has a single ship carrying Emergency Repair Personnel/Goddess and the next node is an anchorage repair point (F/H/I), a confirmation dialog appears. Clicking Cancel reloads the game page.",
+  "enableLabel": "Enable advance warning"
+}

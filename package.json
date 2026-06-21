@@ -1,0 +1,41 @@
+{
+  "name": "poi-plugin-damage-control-attack",
+  "version": "0.1.0",
+  "description": "Alerts when advancing to an abyssal repair node would consume an emergency repair personnel/goddess.",
+  "main": "index.js",
+  "files": [
+    "README.md",
+    "index.js",
+    "lib",
+    "views",
+    "i18n"
+  ],
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "kancolle",
+    "poi",
+    "plugin",
+    "poi-plugin",
+    "damage-control",
+    "repair-goddess"
+  ],
+  "author": "DuskWhite",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DuskWhite/poi-plugin-damage-control-attack.git"
+  },
+  "homepage": "https://github.com/DuskWhite/poi-plugin-damage-control-attack#readme",
+  "bugs": {
+    "url": "https://github.com/DuskWhite/poi-plugin-damage-control-attack/issues"
+  },
+  "license": "MIT",
+  "poiPlugin": {
+    "title": "损管进击提醒",
+    "description": "单舰携带损管/女神且下一进击点为泊地修理(F/H/I)时弹出确认。",
+    "icon": "fa/exclamation-triangle",
+    "priority": 10001,
+    "i18nDir": "i18n"
+  }
+}

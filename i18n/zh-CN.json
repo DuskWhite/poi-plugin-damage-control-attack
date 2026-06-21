@@ -1,0 +1,9 @@
+{
+  "warningTitle": "进击提醒",
+  "warningBody": "继续进击将消耗损管或者女神 请确认是否继续进击",
+  "confirm": "确认",
+  "cancel": "取消",
+  "settingsTitle": "损管进击提醒",
+  "settingsDescription": "当出击舰队只有一艘船且携带応急修理要員/女神，并且下一个进击点位为泊地修理点（F/H/I）时，弹出确认弹窗。点击取消会刷新游戏页面。",
+  "enableLabel": "启用进击提醒"
+}
