@@ -1,6 +1,6 @@
 {
   "name": "poi-plugin-damage-control-attack",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "Alerts when advancing to an abyssal repair node would consume an emergency repair personnel/goddess.",
   "main": "index.js",
   "files": [
@@ -8,7 +8,8 @@
     "index.js",
     "lib",
     "views",
-    "i18n"
+    "i18n",
+    "userscript"
   ],
   "scripts": {
     "test": "node test.js"
@@ -18,6 +19,8 @@
     "poi",
     "plugin",
     "poi-plugin",
+    "userscript",
+    "tampermonkey",
     "damage-control",
     "repair-goddess"
   ],
