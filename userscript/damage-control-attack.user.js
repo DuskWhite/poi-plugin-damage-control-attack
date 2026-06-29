@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KanColle Damage Control Advance Warning
 // @namespace    https://github.com/DuskWhite/poi-plugin-damage-control-attack
-// @version      0.1.5
+// @version      0.1.6
 // @description  Warns before advancing to anchorage repair nodes with a single ship carrying damage control.
 // @author       DuskWhite
 // @license      MIT
@@ -174,7 +174,7 @@
 
     window.__damageControlAttack = {
       state,
-      version: '0.1.5',
+      version: '0.1.6',
       showDialog,
       showReloadPanel,
       edgeStore,
@@ -1025,6 +1025,20 @@
       }
     }
 
+    function isKcsApiUrl(url) {
+      return parsePath(url).startsWith('/kcsapi/')
+    }
+
+    function getXhrTextResponse(xhr) {
+      if (xhr.responseType && xhr.responseType !== 'text') return null
+      try {
+        return xhr.responseText
+      } catch (error) {
+        debugLog('skip unreadable xhr response:', xhr.responseType, error)
+        return null
+      }
+    }
+
     function hookXhr() {
       const OriginalXhr = window.XMLHttpRequest
       if (!OriginalXhr || OriginalXhr.__damageControlAttackHooked) return
@@ -1043,7 +1057,12 @@
         const originalSend = xhr.send
         xhr.send = function send(body) {
           requestBody = body
-          xhr.addEventListener('load', () => handleResponse(requestUrl, requestBody, xhr.responseText))
+          xhr.addEventListener('load', () => {
+            if (!isKcsApiUrl(requestUrl)) return
+            const responseText = getXhrTextResponse(xhr)
+            if (responseText === null) return
+            handleResponse(requestUrl, requestBody, responseText)
+          })
           return originalSend.apply(xhr, arguments)
         }
 
