@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KanColle Damage Control Advance Warning
 // @namespace    https://github.com/DuskWhite/poi-plugin-damage-control-attack
-// @version      0.1.6
+// @version      0.1.7
 // @description  Warns before advancing to anchorage repair nodes with a single ship carrying damage control.
 // @author       DuskWhite
 // @license      MIT
@@ -10,6 +10,8 @@
 // @match        *://osapi.dmm.com/gadgets/ifr*
 // @match        *://*/kcs2/index.php*
 // @include      /^https?:\/\/[^/]+\/kcs2\/index\.php.*$/
+// @downloadURL  https://raw.githubusercontent.com/DuskWhite/poi-plugin-damage-control-attack/master/userscript/damage-control-attack.user.js
+// @updateURL    https://raw.githubusercontent.com/DuskWhite/poi-plugin-damage-control-attack/master/userscript/damage-control-attack.user.js
 // @resource     kc3Edges https://raw.githubusercontent.com/KC3Kai/KC3Kai/master/src/data/edges.json
 // @grant        GM_getResourceText
 // @grant        GM_registerMenuCommand
@@ -28,6 +30,7 @@
   'use strict'
 
   const STORAGE_KEY = 'poi-plugin-damage-control-attack:disabled'
+  const SCRIPT_VERSION = '0.1.7'
   const EDGE_URLS = [
     'https://cdn.jsdelivr.net/gh/KC3Kai/KC3Kai@master/src/data/edges.json',
     'https://raw.githubusercontent.com/KC3Kai/KC3Kai/master/src/data/edges.json',
@@ -174,7 +177,7 @@
 
     window.__damageControlAttack = {
       state,
-      version: '0.1.6',
+      version: SCRIPT_VERSION,
       showDialog,
       showReloadPanel,
       edgeStore,
@@ -1102,6 +1105,7 @@
     hookFetch()
     startReloadPanel()
     console.info('damage-control-attack userscript loaded', {
+      version: SCRIPT_VERSION,
       href: window.location.href,
       edgeMaps: edgeStore.edges ? Object.keys(edgeStore.edges).length : 0,
     })
